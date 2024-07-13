@@ -2,7 +2,7 @@ project "Test"
 	kind "ConsoleApp"
 	language "c++"
 	cppdialect "c++17"
-	
+
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/obj/" .. outputdir .. "/%{prj.name}")
 
@@ -14,14 +14,29 @@ project "Test"
 
 	includedirs
 	{
-		"%{wks.location}/Engine/Common"
+		"%{wks.location}/Engine/Sigma",
+		"%{includeDirs.GLFW}",
+        "%{includeDirs.GLAD}",
+        "%{includeDirs.GLM}",
+        "%{includeDirs.STB_IMAGE}"
+    }
+
+	links
+	{
+		"Engine",
+        "GLFW",
+        "GLAD",
+		"opengl32",
+		"gdi32",
+		"user32",
+		"kernel32"
 	}
 
 	filter "configurations:Debug"
 		defines "DEBUG"
 		runtime "Debug"
 		symbols "on"
-
+		
 	filter "configurations:Release"
 		defines "RELEASE"
 		runtime "Release"

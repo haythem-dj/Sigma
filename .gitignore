@@ -1,4 +1,8 @@
-/bin
-/obj
+bin/
+obj/
+.vscode/
+
+*.sublime-project
+*.sublime-workspace
 
 Makefile
