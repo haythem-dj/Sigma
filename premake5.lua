@@ -13,8 +13,9 @@ workspace "Sigma"
     includeDirs = {}
     includeDirs["GLFW"] = "%{wks.location}/Libraries/glfw/glfw/include"
     includeDirs["GLAD"] = "%{wks.location}/Libraries/glad/include"
-    includeDirs["GLM"] = "%{wks.location}/Libraries/glm"
+    includeDirs["GLM"] = "%{wks.location}/Libraries/glm/include"
     includeDirs["STB_IMAGE"] ="%{wks.location}/Libraries/stb_image"
+    includeDirs["ENTT"] = "%{wks.location}/Libraries/entt/include"
 
 	defines
 	{

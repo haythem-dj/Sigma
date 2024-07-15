@@ -18,7 +18,8 @@ project "Engine"
 		"%{includeDirs.GLFW}",
         "%{includeDirs.GLAD}",
         "%{includeDirs.GLM}",
-        "%{includeDirs.STB_IMAGE}"
+        "%{includeDirs.STB_IMAGE}",
+        "%{includeDirs.ENTT}"
 	}
 
 	links
