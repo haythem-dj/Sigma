@@ -7,6 +7,9 @@ project "Engine"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/obj/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "sgpch.h"
+	pchsource "src/sgpch.cpp"
+
 	files
 	{
 		"**.h",
@@ -15,16 +18,20 @@ project "Engine"
 
 	includedirs
 	{
+		"%{includeDirs.ENGINE}",
 		"%{includeDirs.GLFW}",
         "%{includeDirs.GLAD}",
         "%{includeDirs.GLM}",
-        "%{includeDirs.STB_IMAGE}"
+        "%{includeDirs.SPDLOG}",
+        "%{includeDirs.STB_IMAGE}",
+        "%{includeDirs.ENTT}"
 	}
 
 	links
 	{
         "GLFW",
 		"GLAD",
+		"SPDLOG",
 		"opengl32.lib",
 		"gdi32.lib",
 		"user32.lib",

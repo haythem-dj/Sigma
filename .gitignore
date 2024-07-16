@@ -5,4 +5,8 @@ obj/
 *.sublime-project
 *.sublime-workspace
 
+*.exe
+*.o
+*.d
+
 Makefile

@@ -1,3 +1,6 @@
 [submodule "Libraries/glfw/glfw"]
 	path = Libraries/glfw/glfw
 	url = https://github.com/glfw/glfw
+[submodule "Libraries/spdlog/spdlog"]
+	path = Libraries/spdlog/spdlog
+	url = https://github.com/gabime/spdlog
