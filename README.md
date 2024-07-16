@@ -22,27 +22,23 @@ Currently Sigma supports only Windows x64
 #include <sigma.h>
 #include <Sigma/Core/EntryPoint.h>
 
-#include <Sigma.h>
-#include <Sigma/Core/EntryPoint.h>
-
 class App : public Sigma::Application
 {
 public:
 	App()
 	{
 		SetWidth(mWidth);
-		SetHeight(mHeight);	
-	
-		mGame.Init(mWidth, mHeight);
-	
+		SetHeight(mHeight);
+
 		SetBackgroundColor({0.2f, 0.1f, 0.7f});
 	}
 	~App()
 	{}
-	
-	private:
+
+private:
 	unsigned int mWidth = 1080;
-unsigned int mHeight = 608;
+	unsigned int mHeight = 608;
+
 };
 
 Sigma::Application* Sigma::CreateApplication()
