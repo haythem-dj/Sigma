@@ -1,5 +1,5 @@
 #include <Sigma.h>
-#include <Core/EntryPoint.h>
+#include <Sigma/Core/EntryPoint.h>
 
 #include "App.h"
 

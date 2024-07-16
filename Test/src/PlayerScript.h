@@ -7,9 +7,12 @@ using namespace Sigma;
 class PlayerScript : public Sigma::EntityScript
 {
 public:
+	PlayerScript() = default;
+
 	void OnInit() override
 	{
-		
+		auto& transform = GetComponent<TransformComponent>();
+		transform.Position = {0.5f, 0.0f, 0.0f};
 	}
 
 	void OnUpdate(float dt) override

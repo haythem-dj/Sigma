@@ -1,6 +1,5 @@
+#include "sgpch.h"
 #include "Texture.h"
-
-#include <iostream>
 
 #include <glad/glad.h>
 #include <stb_image.h>
@@ -39,7 +38,7 @@ namespace Sigma
 		int format = (chanels == 3) ? GL_RGB : GL_RGBA;
 		if(data)
 			glTexImage2D(mTarget, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-		else std::cout << "Faild to load image '" << path << "'" << std::endl;
+		else SG_CORE_ERROR("Faild to load image '{0}'", path);
 
 		glGenerateMipmap(mTarget);
 

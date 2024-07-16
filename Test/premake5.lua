@@ -14,10 +14,11 @@ project "Test"
 
 	includedirs
 	{
-		"%{wks.location}/Engine/Sigma",
+		"%{includeDirs.ENGINE}",
 		"%{includeDirs.GLFW}",
         "%{includeDirs.GLAD}",
         "%{includeDirs.GLM}",
+        "%{includeDirs.SPDLOG}",
         "%{includeDirs.STB_IMAGE}",
         "%{includeDirs.ENTT}"
     }
@@ -27,6 +28,7 @@ project "Test"
 		"Engine",
         "GLFW",
         "GLAD",
+		"SPDLOG",
 		"opengl32",
 		"gdi32",
 		"user32",

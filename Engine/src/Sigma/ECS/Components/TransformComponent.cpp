@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "TransformComponent.h"
 
 #include <glm/gtc/matrix_transform.hpp>

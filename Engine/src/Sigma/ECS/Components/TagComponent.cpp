@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "TagComponent.h"
 
 namespace Sigma

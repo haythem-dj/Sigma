@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "Input.h"
 
 #include "../Core/Application.h"

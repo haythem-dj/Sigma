@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "CameraComponent.h"
 
 #include <glm/gtc/matrix_transform.hpp>

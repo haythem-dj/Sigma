@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "Entity.h"
 
 namespace Sigma

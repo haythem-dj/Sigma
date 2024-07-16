@@ -1,6 +1,5 @@
+#include "sgpch.h"
 #include "Window.h"
-
-#include <iostream>
 
 namespace Sigma
 {
@@ -8,7 +7,7 @@ namespace Sigma
 	{
 		if(!glfwInit())
 		{
-			std::cout << "GLFW could not initalize" << std::endl;
+			SG_CORE_ERROR("GLFW could not initalize");
 			std::cin.get();
 			glfwTerminate();
 		}

@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "MeshComponent.h"
 
 #include <glad/glad.h>

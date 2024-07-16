@@ -1,8 +1,5 @@
+#include "sgpch.h"
 #include "ShaderProgram.h"
-
-#include <iostream>
-#include <sstream>
-#include <fstream>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -72,8 +69,8 @@ namespace Sigma
 			glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &length);
 			char* message = (char*)malloc(length*sizeof(char));
 			glGetShaderInfoLog(shader, length, &length, message);
-			std::cout << "Failed to compile the " << (type==GL_VERTEX_SHADER ? "Vertex" : "Fragment") << " Shader" << std::endl;
-			std::cout << message << std::endl;
+			SG_CORE_ERROR("Failed to compile the {0} shader", (type==GL_VERTEX_SHADER ? "Vertex" : "Fragment"));
+			SG_CORE_ERROR("{0}", message);
 		}
 
 		return shader;

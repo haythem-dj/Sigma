@@ -1,3 +1,4 @@
+#include "sgpch.h"
 #include "MaterialComponent.h"
 
 namespace Sigma

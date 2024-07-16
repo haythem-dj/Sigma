@@ -11,9 +11,11 @@ workspace "Sigma"
 	outputdir = "%{cfg.buildcfg}-%{cfg.architecture}"
     
     includeDirs = {}
+    includeDirs["ENGINE"] = "%{wks.location}/Engine/src"
     includeDirs["GLFW"] = "%{wks.location}/Libraries/glfw/glfw/include"
     includeDirs["GLAD"] = "%{wks.location}/Libraries/glad/include"
     includeDirs["GLM"] = "%{wks.location}/Libraries/glm/include"
+    includeDirs["SPDLOG"] = "%{wks.location}/Libraries/spdlog/spdlog/include"
     includeDirs["STB_IMAGE"] ="%{wks.location}/Libraries/stb_image"
     includeDirs["ENTT"] = "%{wks.location}/Libraries/entt/include"
 
@@ -25,6 +27,7 @@ workspace "Sigma"
 
     include "Libraries/glfw"
     include "Libraries/glad"
+    include "Libraries/spdlog"
 
 	include "Engine"
 	include "Test"
