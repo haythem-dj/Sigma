@@ -17,6 +17,7 @@ namespace Sigma
 
 		Entity CreateEntity(const std::string& name = "");
         void DestroyEntity(Entity entity);
+        Entity GetEntity(const std::string& name);
 
         void Update(float dt);
 

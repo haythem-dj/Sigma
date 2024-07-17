@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Components/TagComponent.h"
-#include "Components/TransformComponent.h"
-#include "Components/MeshComponent.h"
-#include "Components/MaterialComponent.h"
-#include "Components/CameraComponent.h"
-#include "Components/NativeScriptComponent.h"
+#include "Components/Tag.h"
+#include "Components/Transform.h"
+#include "Components/Mesh.h"
+#include "Components/Material.h"
+#include "Components/Camera.h"
+#include "Components/NativeScript.h"
+#include "Components/Light.h"

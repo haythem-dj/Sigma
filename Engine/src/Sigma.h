@@ -1,13 +1,5 @@
 #pragma once
 
-#ifndef GLM_ENABLE_EXPERIMENTAL
-	#define GLM_ENABLE_EXPERIMENTAL
-#endif
-
-#ifndef STB_IMAGE_IMPLEMENTATION
-	#define STB_IMAGE_IMPLEMENTATION
-#endif
-
 #include "Sigma/Core/Base.h"
 #include "Sigma/Core/Log.h"
 #include "Sigma/Core/Application.h"
@@ -20,7 +12,6 @@
 #include "Sigma/ECS/Components.h"
 #include "Sigma/ECS/Entity.h"
 #include "Sigma/ECS/Scene.h"
-#include "Sigma/ECS/Light.h"
 
 #include "Sigma/Renderer/ShaderProgram.h"
 #include "Sigma/Renderer/Texture.h"

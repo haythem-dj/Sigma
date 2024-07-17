@@ -10,6 +10,14 @@
 	#error "Sigma supports only windows."
 #endif
 
+#ifndef GLM_ENABLE_EXPERIMENTAL
+	#define GLM_ENABLE_EXPERIMENTAL
+#endif
+
+#ifndef STB_IMAGE_IMPLEMENTATION
+	#define STB_IMAGE_IMPLEMENTATION
+#endif
+
 #ifdef DEBUG
 	#define SG_ENABLE_LOG 1
 	#define SG_ENABLE_ASSERT 1

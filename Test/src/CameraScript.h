@@ -14,13 +14,18 @@ public:
 
 	void OnUpdate(float dt) override
 	{
-		auto& camera = GetComponent<CameraComponent>();
+		auto& camera = GetComponent<Camera>();
 
 		glm::vec3 right = glm::normalize(glm::cross(camera.Forward, camera.Up));
 		if (Input::IsKeyPressed(SIGMA_KEY_W))
 			camera.Position += camera.Forward * mSpeed * dt;
 		else if (Input::IsKeyPressed(SIGMA_KEY_S))
 			camera.Position -= camera.Forward * mSpeed * dt;
+
+		if (Input::IsKeyPressed(SIGMA_KEY_D))
+			camera.Position += right * mSpeed * dt;
+		else if (Input::IsKeyPressed(SIGMA_KEY_A))
+			camera.Position -= right * mSpeed * dt;
 	}
 
 	void OnDestroy() override

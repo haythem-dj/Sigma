@@ -19,7 +19,7 @@ private:
 	std::vector<Sigma::Vertex> mQuadVertices;
 	std::vector<unsigned int> mQuadIndices;
 
-	Sigma::Entity mPlayer, mCameraEntity;
+	Sigma::Entity mPlayer, mCamera;
 
 	Sigma::Scene mScene;
     Sigma::ShaderProgram mShader;

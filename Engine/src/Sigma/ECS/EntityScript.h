@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "Entity.h"
 
 namespace Sigma
@@ -13,6 +15,11 @@ namespace Sigma
         T& GetComponent()
         {
             return mEntity.GetComponent<T>();
+        }
+
+        Entity GetEntity(const std::string& name)
+        {
+            return mEntity.mScene->GetEntity(name);
         }
 
     protected:

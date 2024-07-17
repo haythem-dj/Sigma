@@ -6,7 +6,7 @@
 
 namespace Sigma
 {
-    void Renderer::Render(const MeshComponent& mesh, const TransformComponent& transform, const CameraComponent& camera, const ShaderProgram& shader)
+    void Renderer::Render(const Mesh& mesh, const Transform& transform, const Camera& camera, const ShaderProgram& shader)
     {
         mesh.Bind();
         shader.Activate();
@@ -22,7 +22,7 @@ namespace Sigma
         mesh.Unbind();
     }
 
-    void Renderer::Render(const MeshComponent& mesh, const TransformComponent& transform, const MaterialComponent& material, const CameraComponent& camera, const ShaderProgram& shader)
+    void Renderer::Render(const Mesh& mesh, const Transform& transform, const Material& material, const Camera& camera, const ShaderProgram& shader)
     {
         mesh.Bind();
         material.Bind();

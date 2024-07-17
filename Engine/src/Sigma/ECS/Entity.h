@@ -19,6 +19,7 @@ namespace Sigma
         template<typename T, typename... Args>
         T& AddComponent(Args&&... args)
         {
+            SG_CORE_ASSERT(!HasComponent<T>(), "This component is already in this entity");
             T& component = mScene->mRegistry.emplace<T>(mEntityID, std::forward<Args>(args)...);
             return component;
         }
@@ -26,6 +27,7 @@ namespace Sigma
         template<typename T>
         T& GetComponent()
         {
+            SG_CORE_ASSERT(HasComponent<T>(), "This Entity does not have this component");
             return mScene->mRegistry.get<T>(mEntityID);
         }
 
@@ -46,6 +48,7 @@ namespace Sigma
     private:
         entt::entity mEntityID = entt::null;
         Scene* mScene = nullptr;
+        friend class EntityScript;
 
     };
 }

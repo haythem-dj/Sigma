@@ -11,13 +11,13 @@ public:
 
 	void OnInit() override
 	{
-		auto& transform = GetComponent<TransformComponent>();
+		auto& transform = GetComponent<Transform>();
 		transform.Position = {0.5f, 0.0f, 0.0f};
 	}
 
 	void OnUpdate(float dt) override
 	{
-		auto& transform = GetComponent<TransformComponent>();
+		auto& transform = GetComponent<Transform>();
 		glm::vec2 direction = {0.0f, 0.0f};
 
 		if (Input::IsKeyPressed(SIGMA_KEY_UP))
