@@ -14,7 +14,7 @@ project "Test"
 
 	includedirs
 	{
-		"%{includeDirs.ENGINE}",
+		"%{includeDirs.SIGMA}",
 		"%{includeDirs.GLFW}",
         "%{includeDirs.GLAD}",
         "%{includeDirs.GLM}",
@@ -25,14 +25,12 @@ project "Test"
 
 	links
 	{
-		"Engine",
-        "GLFW",
-        "GLAD",
-		"SPDLOG",
-		"opengl32",
-		"gdi32",
-		"user32",
-		"kernel32"
+		"Sigma",
+	}
+
+	prebuildcommands
+	{
+		("{COPY} %{wks.location}/bin/" .. outputdir .. "/Sigma/Sigma.dll %{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	}
 
 	filter "configurations:Debug"

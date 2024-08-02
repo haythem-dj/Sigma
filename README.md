@@ -1,10 +1,10 @@
 # Sigma
 The Sigma Engine is a 3D game engine with no editor.
 # building
-In order to build Sigma you need to have premake5 installed.
-You can get it from [here](https://premake.github.io/)
-Premake supports many IDEs and compilers ([look  here](https://premake.github.io/docs/Using-Premake))
-You can generate project files for IDEs like Visual Studio or Makefiles for gcc or clang
+In order to build Sigma you need to have premake5 installed.\
+You can get it from [here](https://premake.github.io/).\
+Premake supports many IDEs and compilers ([look  here](https://premake.github.io/docs/Using-Premake)).\
+You can generate project files for IDEs like Visual Studio or Makefiles for gcc or clang.\
 ### example(make)
 ```bash
 premake5 gmake

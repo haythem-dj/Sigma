@@ -1,6 +1,7 @@
 bin/
 obj/
 .vscode/
+dist/
 
 *.sublime-project
 *.sublime-workspace

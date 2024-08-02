@@ -50,13 +50,13 @@ struct SpotLight
 	vec3 specular;
 };
 
-uniform int numDirLight;
-uniform int numPointLight;
-uniform int numSpotLight;
+uniform int num_dir_light;
+uniform int num_point_light;
+uniform int num_spot_light;
 
-uniform DirLight[MAX_LIGHTS] dirLights;
-uniform PointLight[MAX_LIGHTS] pointLights;
-uniform SpotLight[MAX_LIGHTS] spotLights;
+uniform DirLight[MAX_LIGHTS] dir_lights;
+uniform PointLight[MAX_LIGHTS] point_lights;
+uniform SpotLight[MAX_LIGHTS] spot_lights;
 
 uniform vec3 view_pos;
 uniform Material material;
@@ -72,14 +72,14 @@ void main()
 
 	vec3 result = vec3(0.0);
 
-	for (int i = 0; i < numDirLight; i++)
-		result += CalcDirLight(dirLights[i], norm, viewDir);
+	for (int i = 0; i < num_dir_light; i++)
+		result += CalcDirLight(dir_lights[i], norm, viewDir);
 
-	for (int i = 0; i < numPointLight; i++)
-		result += CalcPointLight(pointLights[i], norm, viewDir);
+	for (int i = 0; i < num_point_light; i++)
+		result += CalcPointLight(point_lights[i], norm, viewDir);
 
-	for (int i = 0; i < numSpotLight; i++)
-		result += CalcSpotLight(spotLights[i], norm, viewDir);
+	for (int i = 0; i < num_spot_light; i++)
+		result += CalcSpotLight(spot_lights[i], norm, viewDir);
 
 	FragColor = vec4(result, 1.0);
 }
@@ -116,7 +116,7 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 viewDir)
 	vec3 diffuse = attenuation * light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));
 	vec3 specular = attenuation * light.specular * spec * vec3(texture(material.specular, TexCoords));
 
-	return (ambient, diffuse, specular);
+	return (ambient + diffuse + specular);
 }
 
 vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 viewDir)
@@ -124,8 +124,8 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 viewDir)
 	vec3 lightDirection = normalize(light.position - Position);
 
 	float theta = dot(lightDirection, normalize(-light.direction));
-	float epsilon = light.cutOff - light.outerCutOff;
-	float intencity = clamp((theta - light.outerCutOff)/epsilon, 0.0, 1.0);
+	float epsilon = cos(radians(light.cutOff)) - cos(radians(light.outerCutOff));
+	float intencity = clamp((theta - cos(radians(light.outerCutOff)))/epsilon, 0.0, 1.0);
 
 	float diff = max(dot(normal, lightDirection), 0.0);
 
