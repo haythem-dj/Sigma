@@ -1,10 +1,14 @@
-project "Test"
-	kind "ConsoleApp"
+project "Sigma"
+	kind "SharedLib"
 	language "c++"
 	cppdialect "c++17"
+    staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/obj/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "sgpch.h"
+	pchsource "src/sgpch.cpp"
 
 	files
 	{
@@ -21,16 +25,22 @@ project "Test"
         "%{includeDirs.SPDLOG}",
         "%{includeDirs.STB_IMAGE}",
         "%{includeDirs.ENTT}"
-    }
+	}
 
 	links
 	{
-		"Sigma",
+        "GLFW",
+		"GLAD",
+		"SPDLOG",
+		"opengl32",
+		"gdi32",
+		"user32",
+		"kernel32"
 	}
 
-	prebuildcommands
+	defines
 	{
-		("{COPY} %{wks.location}/bin/" .. outputdir .. "/Sigma/Sigma.dll %{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+		"DLL_BUILD"
 	}
 
 	filter "configurations:Debug"
