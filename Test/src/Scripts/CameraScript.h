@@ -11,7 +11,7 @@ public:
 
 	void OnUpdate(float dt) override
 	{
-		auto& camera = GetComponent<Camera>();
+		auto& camera = GetComponent<Sigma::Camera>();
 
 		glm::vec3 right = glm::normalize(glm::cross(camera.Forward, camera.Up));
 		if (Sigma::Input::IsKeyPressed(SIGMA_KEY_W))
