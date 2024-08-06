@@ -28,7 +28,7 @@ project "Test"
 		"Sigma",
 	}
 
-	prebuildcommands
+	postbuildcommands
 	{
 		("{COPY} %{wks.location}/bin/" .. outputdir .. "/Sigma/Sigma.dll %{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	}

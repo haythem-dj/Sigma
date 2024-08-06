@@ -8,7 +8,7 @@ public:
 	Game();
 	~Game();
 
-    void Init(unsigned int width, unsigned int height);
+    void Init();
 
 	const Sigma::Scene* GetScene() const { return &mScene; }
 

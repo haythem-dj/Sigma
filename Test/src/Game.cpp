@@ -8,10 +8,10 @@ Game::Game()
 Game::~Game()
 {}
 
-void Game::Init(unsigned int width, unsigned int height)
+void Game::Init()
 {
-    mWidth = width;
-    mHeight = height;
+    mWidth = Sigma::Application::Get().GetWindow()->GetWidth();
+    mHeight = Sigma::Application::Get().GetWindow()->GetHeight();
 
     mShader.Init("res/shaders/default.vert", "res/shaders/default.frag");
     
@@ -52,7 +52,7 @@ void Game::DrawTexture(Sigma::Texture texture, glm::vec4 src, glm::vec4 dst)
 
     Sigma::Entity entity = mScene.CreateEntity("texture" + std::to_string(mTextureCount));
 
-    entity.AddComponent<Transform>(glm::vec3(dst.x, dst.y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(scaleX, scaleY, 1.0f));
-    entity.AddComponent<Mesh>(quadVertices, quadIndices);
-    entity.AddComponent<Material>(texture);
+    entity.AddComponent<Sigma::Transform>(glm::vec3(dst.x, dst.y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(scaleX, scaleY, 1.0f));
+    entity.AddComponent<Sigma::Mesh>(quadVertices, quadIndices);
+    entity.AddComponent<Sigma::Material>(texture);
 }

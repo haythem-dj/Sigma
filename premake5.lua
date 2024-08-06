@@ -11,7 +11,7 @@ workspace "Sigma"
 	outputdir = "%{cfg.buildcfg}-%{cfg.architecture}"
     
     includeDirs = {}
-    includeDirs["SIGMA"] = "%{wks.location}/Sigma/src"
+    includeDirs["SIGMA"] = "%{wks.location}/Sigma/src/Sigma"
     includeDirs["GLFW"] = "%{wks.location}/Libraries/glfw/glfw/include"
     includeDirs["GLAD"] = "%{wks.location}/Libraries/glad/include"
     includeDirs["GLM"] = "%{wks.location}/Libraries/glm/include"

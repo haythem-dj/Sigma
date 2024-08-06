@@ -13,8 +13,5 @@ public:
 	~App();
 
 private:
-	unsigned int mWidth = 1080;
-	unsigned int mHeight = 608;
-
 	Game mGame;
 };
